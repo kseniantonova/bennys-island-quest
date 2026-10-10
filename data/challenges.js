@@ -1,0 +1,21 @@
+// Checkpoint IDs match data/points.js; content stays separate from UI.
+const CHALLENGES = [
+  { id: 1, checkpoint: "start", type: "gapFill", instruction: "Complete the sentence.", prompt: "Benny ___ an old map last Saturday. (find)", correctAnswer: "found" },
+  { id: 2, checkpoint: "stop-2", type: "multipleChoice", instruction: "Choose the correct form.", prompt: "He ___ his compass and backpack.", options: ["took", "taked", "takes"], correctAnswer: "took" },
+  { id: 3, checkpoint: "stop-3", type: "wordOrder", instruction: "Put the words in the correct order.", prompt: "arrived / Benny / on the island / early in the morning", options: ["arrived", "Benny", "on the island", "early in the morning"], correctAnswer: "Benny arrived on the island early in the morning." },
+  { id: 4, checkpoint: "stop-4", type: "errorCorrection", instruction: "Correct the mistake.", prompt: "Benny goed north from the beach.", correctAnswer: "Benny went north from the beach." },
+  { id: 5, checkpoint: "stop-5", type: "gapFill", instruction: "Complete the sentence.", prompt: "He ___ some large rocks. (see)", correctAnswer: "saw" },
+  { id: 6, checkpoint: "stop-6", type: "makeNegative", instruction: "Make the sentence negative.", prompt: "Benny crossed the river.", correctAnswer: "Benny didn’t cross the river.", acceptedAnswers: ["Benny did not cross the river."] },
+  { id: 7, checkpoint: "stop-7", type: "gapFill", instruction: "Complete the sentence.", prompt: "He ___ some initials on an old tree. (find)", correctAnswer: "found" },
+  { id: 8, checkpoint: "stop-8", type: "makeQuestion", instruction: "Make a question.", prompt: "Benny found the raft near the river.", hint: "Where ... ?", correctAnswer: "Where did Benny find the raft?" },
+  { id: 9, checkpoint: "stop-9", type: "multipleChoice", instruction: "Choose the correct form.", prompt: "Benny ___ the cave behind the rocks.", options: ["discover", "discovered", "did discovered"], correctAnswer: "discovered" },
+  { id: 10, checkpoint: "stop-10", type: "gapFill", instruction: "Complete the sentence.", prompt: "When Benny was younger, he ___ adventure stories every weekend. (read)", correctAnswer: "used to read" },
+  { id: 11, checkpoint: "stop-11", type: "gapFill", instruction: "Complete the sentence.", prompt: "His grandfather ___ him stories about distant islands. (tell)", correctAnswer: "used to tell" },
+  { id: 12, checkpoint: "stop-12", type: "makeNegative", instruction: "Make the sentence negative.", prompt: "Benny used to travel alone when he was younger.", correctAnswer: "Benny didn’t use to travel alone when he was younger.", acceptedAnswers: ["Benny did not use to travel alone when he was younger."] },
+  { id: 13, checkpoint: "stop-13", type: "errorCorrection", instruction: "Correct the mistake.", prompt: "He didn’t used to carry a compass.", correctAnswer: "He didn’t use to carry a compass.", acceptedAnswers: ["He did not use to carry a compass."] },
+  { id: 14, checkpoint: "stop-14", type: "multipleChoice", instruction: "Choose the correct form.", prompt: "Benny ___ hours looking at old maps when he was younger.", options: ["used to spend", "used spend", "was spend"], correctAnswer: "used to spend" },
+  { id: 15, checkpoint: "stop-15", type: "makeQuestion", instruction: "Make a question.", prompt: "Benny used to explore the coast with his grandfather.", correctAnswer: "Did Benny use to explore the coast with his grandfather?" },
+  { id: 16, checkpoint: "stop-16", type: "gapFill", instruction: "Complete the sentence.", prompt: "Last weekend, Benny ___ to explore the island alone. (decide)", correctAnswer: "decided" },
+  { id: 17, checkpoint: "stop-17", type: "gapFill", instruction: "Complete the sentence.", prompt: "When Benny was younger, he ___ near the sea. (live)", correctAnswer: "used to live" },
+  { id: 18, checkpoint: "finish", type: "finalChallenge", instruction: "Complete both parts of the sentence.", prompt: "When Benny was younger, he ___ maps, but last weekend he ___ a real adventure. (study / have)", correctAnswer: "used to study / had", acceptedAnswers: ["used to study, had"] },
+].map(challenge => ({ ...challenge, feedback: { correct: "Great! Keep going.", incorrect: "Try again." } }));

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BENNY’S ISLAND QUEST</title>
+  <link rel="stylesheet" href="src/styles.css">
+  <script defer src="data/points.js"></script>
+  <script defer src="data/challenges.js"></script>
+  <script defer src="data/story-moments.js"></script>
+  <script defer src="src/answers.js"></script>
+  <script defer src="src/game.js"></script>
+</head>
+<body>
+  <main>
+    <section id="intro" class="screen intro" aria-labelledby="intro-title">
+      <div class="intro-copy">
+        <p class="eyebrow">A MYSTERIOUS ISLAND. AN UNEXPECTED ADVENTURE.</p>
+        <h1 id="intro-title" tabindex="-1">BENNY’S<br>ISLAND QUEST</h1>
+        <div class="story">
+          <p>Benny found an old map in his grandfather’s room.<br>His grandfather used to tell him stories about a mysterious island.<br>One day, Benny decided to find it.</p>
+          <p>Now Benny is ready to explore the island and follow the hidden path.</p>
+          <p class="invitation">Can you help Benny on his adventure?</p>
+        </div>
+        <button id="start" class="primary">START ADVENTURE</button>
+      </div>
+      <div class="intro-scene">
+        <img class="benny" src="images/benny-compass.png" alt="Benny holding an old map and a compass on the island" width="2172" height="724">
+      </div>
+    </section>
+
+    <section id="map" class="screen map-screen" aria-labelledby="map-title" hidden>
+      <header class="map-header">
+        <div><p class="eyebrow">BENNY’S ISLAND QUEST</p><h2 id="map-title" tabindex="-1">Find the cave</h2></div>
+        <p id="map-hint" class="map-hint" aria-live="polite"><span id="map-hint-text">Choose START to begin.</span><span id="map-progress" class="map-progress">0 / 18</span></p>
+      </header>
+      <div class="map-frame">
+        <img src="images/island-map.png" alt="Island map with a beach, a large tree, a bridge and a cave in the northeast" width="1672" height="941">
+        <div id="map-points" class="map-points" aria-label="Island stops"></div>
+        <div id="benny-marker" class="benny-marker" role="img" aria-label="Benny at START"><img src="images/benny-cutout.png" alt="" width="1086" height="1448"></div>
+      </div>
+    </section>
+
+    <dialog id="question" aria-labelledby="question-title">
+      <p class="eyebrow" id="question-stop">START</p>
+      <h2 id="question-title"></h2>
+      <p id="question-prompt" class="question-prompt"></p>
+      <p id="question-hint" class="question-hint" hidden></p>
+      <form id="answer-form">
+        <div id="answer-controls"></div>
+        <p id="feedback" class="feedback" role="status" aria-live="polite"></p>
+        <div id="help-block" class="answer-help" aria-labelledby="help-title" hidden>
+          <p id="help-title">Need some help?</p>
+          <p>Would you like to see the correct answer?</p>
+          <div class="dialog-actions">
+            <button id="show-answer" type="button" class="primary">SHOW ANSWER</button>
+            <button id="try-again" type="button" class="secondary">TRY AGAIN</button>
+          </div>
+        </div>
+        <div id="revealed-answer" class="answer-help" role="status" hidden>
+          <p class="answer-heading">Correct answer:</p>
+          <p id="correct-answer-text"></p>
+        </div>
+        <div class="dialog-actions">
+          <button id="check" type="submit" class="primary">CHECK</button>
+          <button id="got-it" type="button" class="primary" hidden>GOT IT — CONTINUE</button>
+          <button id="continue" type="button" class="primary" hidden>CONTINUE</button>
+          <button id="close" type="button" class="secondary">CLOSE</button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog id="story-moment" aria-labelledby="story-text">
+      <p class="eyebrow">BENNY’S ISLAND QUEST</p>
+      <p id="story-text" class="story-text"></p>
+      <p id="story-detail" class="story-text"></p>
+      <div class="dialog-actions"><button id="story-continue" type="button" class="primary">CONTINUE</button></div>
+    </dialog>
+
+    <section id="finish" class="screen finish" aria-labelledby="finish-title" hidden>
+      <img class="finish-scene" src="images/final-cave-scene.png" alt="Benny discovering a familiar symbol on the cave wall, with the island and sunset behind him" width="1672" height="941">
+      <div class="finish-copy">
+        <p class="eyebrow">BENNY’S ISLAND QUEST</p>
+        <h1 id="finish-title" tabindex="-1">YOU FOUND THE CAVE!</h1>
+        <p class="finish-story">Benny stepped inside and looked around.<br>On the cave wall, he saw the same symbol he had found before.</p>
+        <p class="finish-story">His grandfather really had been here.</p>
+        <p class="finish-progress">18 / 18 challenges completed</p>
+        <div class="finish-ending">
+          <p class="finish-story">But this was only the beginning...</p>
+          <p class="finish-story">To be continued.</p>
+        </div>
+        <button id="again" class="primary">PLAY AGAIN</button>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
